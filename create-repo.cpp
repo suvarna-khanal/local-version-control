@@ -1,17 +1,23 @@
 #include <iostream>
 #include <string>
-
+#include <boost/filesystem.hpp>
 #include "create-repo.h"
 
 int main(int argCount, char** args)
 {
-	std::string repo_name = args[1];//repository name
-	std::string repo_loc  = args[2];//repository location
-	std::cout<<argCount<<std::endl;
-	if(argCount!=3)
+    if(argCount!=2)
+    {
+        std::cerr<<"Usage: create-repo (repository-path)"<<std::endl;
+        return 0;
+    }
+	char* repo_loc  = args[1];//repository location
+	boost::filesystem::path dir_path(repo_loc);
+	if(boost::filesystem::create_directory(dir_path))
 	{
-		std::cerr<<"Usage: create-repo (repository name) (repository location)"<<std::endl;
+		std::cerr<<"Repository created successfully"<<std::endl;
+		return 0;
 	}
-	
-	return 0;
+	std::cerr<<"Error creating Repository"<<std::endl;
+
+	return -1;
 }
