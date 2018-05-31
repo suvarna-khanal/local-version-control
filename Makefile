@@ -115,29 +115,77 @@ lovec/fast:
 	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/build
 .PHONY : lovec/fast
 
-create-repo.o: create-repo.cpp.o
-.PHONY : create-repo.o
+src/Branch.o: src/Branch.cpp.o
+.PHONY : src/Branch.o
 
 # target to build an object file
-create-repo.cpp.o:
-	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/create-repo.cpp.o
-.PHONY : create-repo.cpp.o
+src/Branch.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Branch.cpp.o
+.PHONY : src/Branch.cpp.o
 
-create-repo.i: create-repo.cpp.i
-.PHONY : create-repo.i
+src/Branch.i: src/Branch.cpp.i
+.PHONY : src/Branch.i
 
 # target to preprocess a source file
-create-repo.cpp.i:
-	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/create-repo.cpp.i
-.PHONY : create-repo.cpp.i
+src/Branch.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Branch.cpp.i
+.PHONY : src/Branch.cpp.i
 
-create-repo.s: create-repo.cpp.s
-.PHONY : create-repo.s
+src/Branch.s: src/Branch.cpp.s
+.PHONY : src/Branch.s
 
 # target to generate assembly for a file
-create-repo.cpp.s:
-	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/create-repo.cpp.s
-.PHONY : create-repo.cpp.s
+src/Branch.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Branch.cpp.s
+.PHONY : src/Branch.cpp.s
+
+src/Repository.o: src/Repository.cpp.o
+.PHONY : src/Repository.o
+
+# target to build an object file
+src/Repository.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Repository.cpp.o
+.PHONY : src/Repository.cpp.o
+
+src/Repository.i: src/Repository.cpp.i
+.PHONY : src/Repository.i
+
+# target to preprocess a source file
+src/Repository.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Repository.cpp.i
+.PHONY : src/Repository.cpp.i
+
+src/Repository.s: src/Repository.cpp.s
+.PHONY : src/Repository.s
+
+# target to generate assembly for a file
+src/Repository.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Repository.cpp.s
+.PHONY : src/Repository.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -148,9 +196,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... lovec"
 	@echo "... rebuild_cache"
-	@echo "... create-repo.o"
-	@echo "... create-repo.i"
-	@echo "... create-repo.s"
+	@echo "... src/Branch.o"
+	@echo "... src/Branch.i"
+	@echo "... src/Branch.s"
+	@echo "... src/Repository.o"
+	@echo "... src/Repository.i"
+	@echo "... src/Repository.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
