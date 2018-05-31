@@ -23,3 +23,57 @@ int Repository::create_repository(const char* repo_loc)
 
 	return -1;
 }
+
+bool Repository::get_info()
+{
+	std::string username = "";
+	std::string password = "";
+	std::cerr<<"Set Username: ";
+	std::cin>>username;
+	std::cerr<<"Set Password: ";
+	std::cin>>password;
+
+	return validate_password(password);	
+	
+}
+
+bool Repository::validate_password(std::string& password)
+{
+	unsigned int pass_counter = 3;
+	while(pass_counter!=0)
+	{
+		if(password.empty())
+		{
+			std::cerr<<"Password cannot be empty!"<<std::endl;
+			--pass_counter;
+		}
+
+		else if(password.length()<6)
+		{
+			std::cerr<<"Password length should be greater than 6"<<std::endl;
+			--pass_counter;
+		}
+		
+		else
+		{
+			return true;
+		}
+		std::cout<<"Set Password: ";
+		std::cin>>password;
+	}
+
+	return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

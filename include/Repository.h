@@ -11,6 +11,9 @@ class Repository
 	  virtual ~Repository();
 	
 	  int create_repository(const char* repo_loc);
+	  bool get_info();
+	  bool validate_password(std::string& password);
+	
 		
 
 
