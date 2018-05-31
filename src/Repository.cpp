@@ -26,19 +26,23 @@ int Repository::create_repository(const char* repo_loc)
 
 bool Repository::get_info()
 {
+	char p[10];
+	
 	std::string username = "";
 	std::string password = "";
 	std::cerr<<"Set Username: ";
 	std::cin>>username;
-	std::cerr<<"Set Password: ";
-	std::cin>>password;
-
+	std::cin.clear();
+	std::cout<<"Set Password: ";
+	std::cin>>password;//need to work on this	
+	std::cin.clear();
 	return validate_password(password);	
 	
 }
 
 bool Repository::validate_password(std::string& password)
 {
+	std::cout<<"Entered password is:"<<password<<std::endl;
 	unsigned int pass_counter = 3;
 	while(pass_counter!=0)
 	{
@@ -59,6 +63,7 @@ bool Repository::validate_password(std::string& password)
 			return true;
 		}
 		std::cout<<"Set Password: ";
+		std::cin.clear();
 		std::cin>>password;
 	}
 
