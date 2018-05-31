@@ -8,7 +8,10 @@ project (local-version-control)
 set(SOURCE_PATH src)
 set(HEADER_PATH include)
 
-set(SOURCE_FILE ${SOURCE_PATH}/main.cpp  ${SOURCE_PATH}/Repository.cpp ${SOURCE_PATH}/Branch.cpp)
+set(SOURCE_FILE ${SOURCE_PATH}/main.cpp
+	        ${SOURCE_PATH}/Repository.cpp 
+		${SOURCE_PATH}/Branch.cpp
+		${SOURCE_PATH}/Encrypt.cpp)
 
 add_executable(lovec ${SOURCE_FILE})
 

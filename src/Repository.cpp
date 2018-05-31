@@ -26,8 +26,6 @@ int Repository::create_repository(const char* repo_loc)
 
 bool Repository::get_info()
 {
-	char p[10];
-	
 	std::string username = "";
 	std::string password = "";
 	std::cerr<<"Set Username: ";

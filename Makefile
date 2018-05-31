@@ -139,6 +139,30 @@ src/Branch.cpp.s:
 	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Branch.cpp.s
 .PHONY : src/Branch.cpp.s
 
+src/Encrypt.o: src/Encrypt.cpp.o
+.PHONY : src/Encrypt.o
+
+# target to build an object file
+src/Encrypt.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Encrypt.cpp.o
+.PHONY : src/Encrypt.cpp.o
+
+src/Encrypt.i: src/Encrypt.cpp.i
+.PHONY : src/Encrypt.i
+
+# target to preprocess a source file
+src/Encrypt.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Encrypt.cpp.i
+.PHONY : src/Encrypt.cpp.i
+
+src/Encrypt.s: src/Encrypt.cpp.s
+.PHONY : src/Encrypt.s
+
+# target to generate assembly for a file
+src/Encrypt.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Encrypt.cpp.s
+.PHONY : src/Encrypt.cpp.s
+
 src/Repository.o: src/Repository.cpp.o
 .PHONY : src/Repository.o
 
@@ -199,6 +223,9 @@ help:
 	@echo "... src/Branch.o"
 	@echo "... src/Branch.i"
 	@echo "... src/Branch.s"
+	@echo "... src/Encrypt.o"
+	@echo "... src/Encrypt.i"
+	@echo "... src/Encrypt.s"
 	@echo "... src/Repository.o"
 	@echo "... src/Repository.i"
 	@echo "... src/Repository.s"
