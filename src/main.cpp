@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Repository.h"
-#include "Encrypt.h"
+#include "Hash.h"
 int main(int argc, char* argv[])
 {
 	/*std::cout<<argc<<std::endl;
@@ -18,13 +18,13 @@ int main(int argc, char* argv[])
 		//std::cout<<"here i come "<<argv[2]<<std::endl;
 
 		Repository repository;
-		Encrypt encrypt;
 
-		bool credential_status = repository.get_info();
+        std::string&& username = "";
+        std::string&& password = "";
+
+		bool credential_status = repository.get_info(username, password);
 		if(credential_status)
-		{	std::string password = "suvarna";
-			std::string&& encrypted_pass = encrypt.encrypt_string(password);
-			std::cout<<"encrypted pass: "<<encrypted_pass<<std::endl;
+		{
 			repository.create_repository(argv[2]);
 		}
 		//repository.create_repository(argv[2]);

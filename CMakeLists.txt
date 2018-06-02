@@ -11,7 +11,7 @@ set(HEADER_PATH include)
 set(SOURCE_FILE ${SOURCE_PATH}/main.cpp
 	        ${SOURCE_PATH}/Repository.cpp 
 		${SOURCE_PATH}/Branch.cpp
-		${SOURCE_PATH}/Encrypt.cpp)
+		${SOURCE_PATH}/Hash.cpp)
 
 add_executable(lovec ${SOURCE_FILE})
 

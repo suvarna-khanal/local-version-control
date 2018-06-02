@@ -16,7 +16,7 @@ int Repository::create_repository(const char* repo_loc)
 	boost::filesystem::path dir_path(repo_loc);
 	if(boost::filesystem::create_directory(dir_path))
 	{
-		std::cerr<<"Repository created successfully"<<std::endl;
+		std::cerr<<"Repository created successfully!"<<std::endl;
 		return 0;
 	}
 	std::cerr<<"Error creating Repository"<<std::endl;
@@ -24,13 +24,13 @@ int Repository::create_repository(const char* repo_loc)
 	return -1;
 }
 
-int Repository::get_info()
+bool Repository::get_info(std::string& username, std::string& password)
 {
 	short&& username_counter = 3;
 	short&& password_counter = 3;
 	bool&& username_status = false;
-	std::string&& username = "";
-	std::string&& password = "";
+	//std::string&& username = "";
+	//std::string&& password = "";
 
 	do
 	{
@@ -70,9 +70,10 @@ int Repository::get_info()
     if(!username_counter or !password_counter)
     {
         std::cerr<<"Maximun attempts exceeded!"<<std::endl;
+        return false;
     }
 
-	return 0;
+	return true;
 
 }
 
