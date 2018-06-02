@@ -187,6 +187,30 @@ src/Repository.cpp.s:
 	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Repository.cpp.s
 .PHONY : src/Repository.cpp.s
 
+src/ext_src/sha512/sha512.o: src/ext_src/sha512/sha512.cpp.o
+.PHONY : src/ext_src/sha512/sha512.o
+
+# target to build an object file
+src/ext_src/sha512/sha512.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/ext_src/sha512/sha512.cpp.o
+.PHONY : src/ext_src/sha512/sha512.cpp.o
+
+src/ext_src/sha512/sha512.i: src/ext_src/sha512/sha512.cpp.i
+.PHONY : src/ext_src/sha512/sha512.i
+
+# target to preprocess a source file
+src/ext_src/sha512/sha512.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/ext_src/sha512/sha512.cpp.i
+.PHONY : src/ext_src/sha512/sha512.cpp.i
+
+src/ext_src/sha512/sha512.s: src/ext_src/sha512/sha512.cpp.s
+.PHONY : src/ext_src/sha512/sha512.s
+
+# target to generate assembly for a file
+src/ext_src/sha512/sha512.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/ext_src/sha512/sha512.cpp.s
+.PHONY : src/ext_src/sha512/sha512.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -229,6 +253,9 @@ help:
 	@echo "... src/Repository.o"
 	@echo "... src/Repository.i"
 	@echo "... src/Repository.s"
+	@echo "... src/ext_src/sha512/sha512.o"
+	@echo "... src/ext_src/sha512/sha512.i"
+	@echo "... src/ext_src/sha512/sha512.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

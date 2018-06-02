@@ -2,16 +2,18 @@ cmake_minimum_required (VERSION 3.0)
 
 set(CMAKE_CXX_FLAGS "-std=c++14 -Wall -Wextra -O2")
 set(CMAKE_BUILD_TYPE Debug)
-#message( ${CMAKE_CXX_FLAGS})
 project (local-version-control)
 
 set(SOURCE_PATH src)
-set(HEADER_PATH include)
+set(HEADER_PATH include/ext_headers/sha512
+				include)
+
 
 set(SOURCE_FILE ${SOURCE_PATH}/main.cpp
-	        ${SOURCE_PATH}/Repository.cpp 
-		${SOURCE_PATH}/Branch.cpp
-		${SOURCE_PATH}/Hash.cpp)
+	        	${SOURCE_PATH}/Repository.cpp 
+				${SOURCE_PATH}/Branch.cpp
+				${SOURCE_PATH}/Hash.cpp
+				${SOURCE_PATH}/ext_src/sha512/sha512.cpp)
 
 add_executable(lovec ${SOURCE_FILE})
 

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <boost/filesystem.hpp>
+#include "Hash.h"
 
 class Repository
 {

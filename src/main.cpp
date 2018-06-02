@@ -14,8 +14,6 @@ int main(int argc, char* argv[])
 	if(std::string(argv[1])=="create-repo")
 	{
 
-		//Repository repository;
-
         std::string&& username = "";
         std::string&& password = "";
 
