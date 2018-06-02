@@ -6,13 +6,15 @@
 class File_IO
 {
 
+	std::fstream file;
+
 public:
 
 	File_IO();
 	virtual ~File_IO();
 
-	int file_write(const std::string& file_name, const std::string& contents);
-	int file_read(const std::string& file_name, const std::string& contents);
+	bool file_write(const std::string& file_name, const std::string& contents);
+	bool file_read(const std::string& file_name, const std::string& contents);
 
 
 };
