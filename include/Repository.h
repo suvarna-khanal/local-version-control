@@ -9,12 +9,13 @@ class Repository
 	public:
 	  Repository();
 	  virtual ~Repository();
-	
+
 	  int create_repository(const char* repo_loc);
-	  bool get_info();
-	  bool validate_password(std::string& password);
-	
-		
+	  int get_info();
+	  bool validate_username(const std::string& username);
+	  bool validate_password(const std::string& password);
+
+
 
 
 };
