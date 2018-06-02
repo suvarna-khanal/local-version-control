@@ -19,7 +19,7 @@ class Repository
 	  bool get_info(std::string& username, std::string& password);
 	  bool validate_username(const std::string& username);
 	  bool validate_password(const std::string& password);
-	  int generate_config_file(const std::string& username, const std::string& password);
+	  int generate_config_file(const char* repo_loc, const std::string& username, const std::string& password);
 
 
 

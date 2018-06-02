@@ -1,4 +1,10 @@
-#include "Globals.h"
+//#include "Globals.h"
+#include "Repository.h"
+#include "Commit.h"
+
+static Repository repository;
+static Commit commit;
+
 int main(int argc, char* argv[])
 {
 	/*std::cout<<argc<<std::endl;
@@ -24,6 +30,11 @@ int main(int argc, char* argv[])
 			
 		}
 
+	}
+
+	else if(std::string(argv[1])=="commit")
+	{
+		int a = 0;
 	}
 
 	return 0;

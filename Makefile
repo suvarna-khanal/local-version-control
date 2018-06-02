@@ -139,6 +139,30 @@ src/Branch.cpp.s:
 	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Branch.cpp.s
 .PHONY : src/Branch.cpp.s
 
+src/Commit.o: src/Commit.cpp.o
+.PHONY : src/Commit.o
+
+# target to build an object file
+src/Commit.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Commit.cpp.o
+.PHONY : src/Commit.cpp.o
+
+src/Commit.i: src/Commit.cpp.i
+.PHONY : src/Commit.i
+
+# target to preprocess a source file
+src/Commit.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Commit.cpp.i
+.PHONY : src/Commit.cpp.i
+
+src/Commit.s: src/Commit.cpp.s
+.PHONY : src/Commit.s
+
+# target to generate assembly for a file
+src/Commit.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Commit.cpp.s
+.PHONY : src/Commit.cpp.s
+
 src/Hash.o: src/Hash.cpp.o
 .PHONY : src/Hash.o
 
@@ -247,6 +271,9 @@ help:
 	@echo "... src/Branch.o"
 	@echo "... src/Branch.i"
 	@echo "... src/Branch.s"
+	@echo "... src/Commit.o"
+	@echo "... src/Commit.i"
+	@echo "... src/Commit.s"
 	@echo "... src/Hash.o"
 	@echo "... src/Hash.i"
 	@echo "... src/Hash.s"

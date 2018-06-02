@@ -17,8 +17,8 @@ int Repository::create_repository(const char* repo_loc, const std::string& usern
 	if(boost::filesystem::create_directory(dir_path))
 	{
 
-        generate_config_file(username, password);
-        
+        generate_config_file(repo_loc, username, password);
+
 		std::cerr<<"Repository created successfully!"<<std::endl;
 		return 0;
 	}
@@ -28,7 +28,7 @@ int Repository::create_repository(const char* repo_loc, const std::string& usern
 }
 
 
-int Repository::generate_config_file(const std::string& username, const std::string& password)
+int Repository::generate_config_file(const char* repo_loc, const std::string& username, const std::string& password)
 {
 
 
@@ -41,7 +41,9 @@ int Repository::generate_config_file(const std::string& username, const std::str
     std::string&& config_info = "";
 
     std::fstream config_file;
-    config_file.open(CONFIG_FILE, std::fstream::out);
+    std::string config_file_path(repo_loc);
+    
+    config_file.open(config_file_path+"/"+CONFIG_FILE, std::fstream::out);
 
     config_info += hashed_username END;
     config_info += hashed_password END;
