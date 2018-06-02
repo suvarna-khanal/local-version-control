@@ -12,7 +12,7 @@ public:
 	Hash();
 	virtual ~Hash();
 
-	int generate_hash(std::string& input_str, std::string& hash);
+	static int generate_hash(const std::string& input_str, std::string& hash);
 
 
 };

@@ -11,22 +11,15 @@ Repository::~Repository()
 	//dtor
 }
 
-int Repository::create_repository(const char* repo_loc)
+int Repository::create_repository(const char* repo_loc, const std::string& username, const std::string& password)
 {
 	boost::filesystem::path dir_path(repo_loc);
 	if(boost::filesystem::create_directory(dir_path))
 	{
 
-        //do configuration steps here
-        /*************************/
+        generate_config_file(username, password);
+
         
-        Hash hash;
-        std::string hashkey;
-        hash.generate_hash(str, hashkey);
-
-
-        /*************************/
-
 
 
 		std::cerr<<"Repository created successfully!"<<std::endl;
@@ -35,6 +28,33 @@ int Repository::create_repository(const char* repo_loc)
 	std::cerr<<"Error creating Repository"<<std::endl;
 
 	return -1;
+}
+
+
+int Repository::generate_config_file(const std::string& username, const std::string& password)
+{
+
+
+    std::string&& hashed_username = "";
+    std::string&& hashed_password = "";
+
+    Hash::generate_hash(username, hashed_username);
+    Hash::generate_hash(password, hashed_password);
+
+    std::string&& config_info = "";
+
+    std::fstream config_file;
+    config_file.open(CONFIG_FILE, std::fstream::out);
+
+    config_info += hashed_username END;
+    config_info += hashed_password END;
+
+    config_file << config_info;
+
+    config_file.close();
+
+    return 0;
+
 }
 
 bool Repository::get_info(std::string& username, std::string& password)

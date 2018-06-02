@@ -20,7 +20,8 @@ int main(int argc, char* argv[])
 		bool credential_status = repository.get_info(username, password);
 		if(credential_status)
 		{
-			repository.create_repository(argv[2]);
+			repository.create_repository(argv[2], username, password);
+			
 		}
 
 	}
