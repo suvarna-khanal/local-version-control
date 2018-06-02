@@ -29,8 +29,6 @@ bool Repository::get_info(std::string& username, std::string& password)
 	short&& username_counter = 3;
 	short&& password_counter = 3;
 	bool&& username_status = false;
-	//std::string&& username = "";
-	//std::string&& password = "";
 
 	do
 	{

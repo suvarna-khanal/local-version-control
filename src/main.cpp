@@ -1,6 +1,4 @@
-#include <iostream>
-#include "Repository.h"
-#include "Hash.h"
+#include "Globals.h"
 int main(int argc, char* argv[])
 {
 	/*std::cout<<argc<<std::endl;
@@ -15,9 +13,8 @@ int main(int argc, char* argv[])
 
 	if(std::string(argv[1])=="create-repo")
 	{
-		//std::cout<<"here i come "<<argv[2]<<std::endl;
 
-		Repository repository;
+		//Repository repository;
 
         std::string&& username = "";
         std::string&& password = "";
@@ -27,7 +24,7 @@ int main(int argc, char* argv[])
 		{
 			repository.create_repository(argv[2]);
 		}
-		//repository.create_repository(argv[2]);
+
 	}
 
 	return 0;
