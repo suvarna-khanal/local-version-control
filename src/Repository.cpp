@@ -18,10 +18,7 @@ int Repository::create_repository(const char* repo_loc, const std::string& usern
 	{
 
         generate_config_file(username, password);
-
         
-
-
 		std::cerr<<"Repository created successfully!"<<std::endl;
 		return 0;
 	}
