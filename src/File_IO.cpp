@@ -14,7 +14,6 @@ File_IO::~File_IO()
 }
 
 File_IO* File_IO::file_ptr = nullptr;
-//std::cout<<"is created"<<std::endl;
 
 File_IO* File_IO::get_instance()
 {
@@ -35,12 +34,12 @@ bool File_IO::file_write(const std::string& file_name, const std::string& conten
 	if(!file.is_open())		
 	{
 		std::cerr<<"Error opening file "<<APOS<<file_name<<APOS<<std::endl;
-		std::cout<<"here1"<<std::endl;
+
 		return false;
 	}
 
 	file << contents;
-	std::cout<<"is created file"<<std::endl;
+	
 	file.close();
 
 	return true;
@@ -50,13 +49,15 @@ bool File_IO::file_write(const std::string& file_name, const std::string& conten
 bool File_IO::file_read(const std::string& file_name, std::string& contents)
 {
 
+	contents = "";
+
 	file.open(file_name, std::fstream::in);
 
 	if(!file.is_open())
 	{
 
-		std::cerr<<"Error opening file!"<<std::endl;
-		std::cout<<"here2"<<std::endl;
+		std::cerr<<"Error opening file "<<APOS<<file_name<<APOS<<std::endl;
+
 		return false;
 	}
 
@@ -66,6 +67,7 @@ bool File_IO::file_read(const std::string& file_name, std::string& contents)
 	{
 
 		contents += str END;
+		//std::cout<<contents<<std::endl;
 		
 	}
 
@@ -74,5 +76,54 @@ bool File_IO::file_read(const std::string& file_name, std::string& contents)
 	return true;
 
 }
+
+unsigned long int File_IO::get_line_count(const std::string& file_name)
+{
+
+	unsigned long int line_count = 0;
+	std::string&& str = "";
+
+	file.open(file_name, std::fstream::in);
+
+	if(!file.is_open())
+	{
+		std::cerr<<"Error opening file "<<APOS<<file_name<<APOS<<std::endl;
+		return line_count;
+	}
+
+
+
+	while(std::getline(file, str))
+	{
+		++line_count;
+	}
+
+	file.close();
+
+	return line_count;
+}
+
+
+unsigned long int File_IO::get_file_size(const std::string& file_name)
+{
+
+	unsigned long int&& file_size = boost::filesystem::file_size(file_name.c_str());
+
+	return file_size;
+}
+
+bool File_IO::get_file_hash(const std::string& file_name, std::string& hash_value)
+{
+	hash_value = "";
+	std::string&& contents = "";
+
+	file_read(file_name, contents);
+
+	Hash::generate_hash(contents, hash_value);
+
+	return true;
+
+}
+
 
 
