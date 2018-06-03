@@ -52,7 +52,18 @@ int Repository::generate_config_file(const char* repo_loc, const std::string& us
 
 }
 
-bool Repository::get_info(std::string& username, std::string& password)
+int Repository::get_config_info(const char* repo_loc, std::unordered_map<std::string, std::string>& config_info)
+{
+
+    std::string config_file_path(repo_loc);
+    config_file_path += PATH_CONCAT + CONFIG_FILE_G;
+
+    std::vector<std::string>&& contents = {};
+    FILE_ACCESS file_read_vec(repo_loc, contents);
+
+}
+
+bool Repository::get_credentials(std::string& username, std::string& password)
 {
 	short&& username_counter = 3;
 	short&& password_counter = 3;

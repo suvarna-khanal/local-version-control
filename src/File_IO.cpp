@@ -67,7 +67,6 @@ bool File_IO::file_read(const std::string& file_name, std::string& contents)
 	{
 
 		contents += str END;
-		//std::cout<<contents<<std::endl;
 		
 	}
 
@@ -76,6 +75,39 @@ bool File_IO::file_read(const std::string& file_name, std::string& contents)
 	return true;
 
 }
+
+
+bool File_IO::file_read_vec(const std::string& file_name, std::vector<std::string>& contents)
+{
+
+	contents.clear();
+
+	file.open(file_name, std::fstream::in);
+
+	if(!file.is_open())
+	{
+
+		std::cerr<<"Error opening file "<<APOS<<file_name<<APOS<<std::endl;
+
+		return false;
+	}
+
+	std::string&& str = "";
+
+	while(std::getline(file, str))
+	{
+
+		contents.push_back(std::move(str));
+		
+	}
+
+	file.close();
+
+	return true;
+
+}
+
+
 
 unsigned long int File_IO::get_line_count(const std::string& file_name)
 {

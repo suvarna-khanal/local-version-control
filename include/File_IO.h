@@ -29,6 +29,7 @@ public:
 
 	bool file_write(const std::string& file_name, const std::string& contents);
 	bool file_read(const std::string& file_name, std::string& contents);
+	bool file_read_vec(const std::string& file_name, std::vector<std::string>& contents);
 	unsigned long int get_line_count(const std::string& file_name);
 	unsigned long int get_file_size(const std::string& file_name);
 	bool get_file_hash(const std::string& file_name, std::string& hash_value);

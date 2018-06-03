@@ -3,6 +3,7 @@
 
 #include "Globals.h"
 #include "File_IO.h"
+#include "Repository.h"
 #include <vector>
 
 class Commit

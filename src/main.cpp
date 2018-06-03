@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
      	std::string&& username = "";
     	std::string&& password = "";
 
-		bool credential_status = repository.get_info(username, password);
+		bool credential_status = repository.get_credentials(username, password);
 		if(credential_status)
 		{
 			repository.create_repository(argv[2], username, password);
