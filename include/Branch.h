@@ -1,6 +1,8 @@
 #ifndef BRANCH_H
 #define BRANCH_H
-#include <string>
+
+#include "Globals.h"
+
 class Branch
 {
 	std::string author = "";

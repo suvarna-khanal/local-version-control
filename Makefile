@@ -163,6 +163,30 @@ src/Commit.cpp.s:
 	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Commit.cpp.s
 .PHONY : src/Commit.cpp.s
 
+src/File_IO.o: src/File_IO.cpp.o
+.PHONY : src/File_IO.o
+
+# target to build an object file
+src/File_IO.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/File_IO.cpp.o
+.PHONY : src/File_IO.cpp.o
+
+src/File_IO.i: src/File_IO.cpp.i
+.PHONY : src/File_IO.i
+
+# target to preprocess a source file
+src/File_IO.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/File_IO.cpp.i
+.PHONY : src/File_IO.cpp.i
+
+src/File_IO.s: src/File_IO.cpp.s
+.PHONY : src/File_IO.s
+
+# target to generate assembly for a file
+src/File_IO.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/File_IO.cpp.s
+.PHONY : src/File_IO.cpp.s
+
 src/Hash.o: src/Hash.cpp.o
 .PHONY : src/Hash.o
 
@@ -274,6 +298,9 @@ help:
 	@echo "... src/Commit.o"
 	@echo "... src/Commit.i"
 	@echo "... src/Commit.s"
+	@echo "... src/File_IO.o"
+	@echo "... src/File_IO.i"
+	@echo "... src/File_IO.s"
 	@echo "... src/Hash.o"
 	@echo "... src/Hash.i"
 	@echo "... src/Hash.s"

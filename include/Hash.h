@@ -1,7 +1,9 @@
 #ifndef HASH_H
 #define HASH_H
+
 #include <string>
 #include "sha512.h"
+
 
 class Hash
 {

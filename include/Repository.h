@@ -1,13 +1,12 @@
 #ifndef REPOSITORY_H
 #define REPOSITORY_H
 
+#include "Globals.h"
 #include <iostream>
 #include <fstream>
 #include <boost/filesystem.hpp>
 #include "Hash.h"
-
-#define CONFIG_FILE 	".lovec_config.txt"
-#define END  			+"\n"
+#include "File_IO.h"
 
 class Repository
 {

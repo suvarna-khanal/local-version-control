@@ -14,7 +14,8 @@ set(SOURCE_FILE ${SOURCE_PATH}/main.cpp
 				${SOURCE_PATH}/Branch.cpp
 				${SOURCE_PATH}/Hash.cpp
 				${SOURCE_PATH}/ext_src/sha512/sha512.cpp
-				${SOURCE_PATH}/Commit.cpp)
+				${SOURCE_PATH}/Commit.cpp
+				${SOURCE_PATH}/File_IO.cpp)
 
 add_executable(lovec ${SOURCE_FILE})
 
