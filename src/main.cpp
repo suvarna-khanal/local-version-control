@@ -33,6 +33,9 @@ int main(int argc, char* argv[])
 	else if(std::string(argv[1])=="commit")
 	{
 
+		std::vector<std::string> changed_files = {};
+		commit.	detect_changed_files(argv[2], changed_files);//argv[2] is the file location
+
 
 
 	}

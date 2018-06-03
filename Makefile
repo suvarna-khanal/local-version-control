@@ -115,6 +115,30 @@ lovec/fast:
 	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/build
 .PHONY : lovec/fast
 
+src/Add.o: src/Add.cpp.o
+.PHONY : src/Add.o
+
+# target to build an object file
+src/Add.cpp.o:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Add.cpp.o
+.PHONY : src/Add.cpp.o
+
+src/Add.i: src/Add.cpp.i
+.PHONY : src/Add.i
+
+# target to preprocess a source file
+src/Add.cpp.i:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Add.cpp.i
+.PHONY : src/Add.cpp.i
+
+src/Add.s: src/Add.cpp.s
+.PHONY : src/Add.s
+
+# target to generate assembly for a file
+src/Add.cpp.s:
+	$(MAKE) -f CMakeFiles/lovec.dir/build.make CMakeFiles/lovec.dir/src/Add.cpp.s
+.PHONY : src/Add.cpp.s
+
 src/Branch.o: src/Branch.cpp.o
 .PHONY : src/Branch.o
 
@@ -292,6 +316,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... lovec"
 	@echo "... rebuild_cache"
+	@echo "... src/Add.o"
+	@echo "... src/Add.i"
+	@echo "... src/Add.s"
 	@echo "... src/Branch.o"
 	@echo "... src/Branch.i"
 	@echo "... src/Branch.s"

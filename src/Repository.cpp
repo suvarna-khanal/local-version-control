@@ -44,7 +44,7 @@ int Repository::generate_config_file(const char* repo_loc, const std::string& us
     std::string config_info = hashed_username END;
     config_info += hashed_password END;
 
-    File_IO::file_ptr->get_instance()->file_write(config_file_path, config_info);
+    FILE_ACCESS file_write(config_file_path, config_info);
 
     
 
