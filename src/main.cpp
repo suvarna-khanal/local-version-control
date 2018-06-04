@@ -6,9 +6,10 @@
 static Repository repository;
 static Commit commit;
 
+
 int main(int argc, char* argv[])
 {
-	
+
 	if(argc<3)
 	{
 		std::cerr<<"Usage: lovec [action]"<<std::endl;
@@ -25,7 +26,7 @@ int main(int argc, char* argv[])
 		if(credential_status)
 		{
 			repository.create_repository(argv[2], username, password);
-			
+
 		}
 
 	}

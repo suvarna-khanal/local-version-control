@@ -6,10 +6,23 @@
 struct FILE_PROP
 {
 	unsigned long int lines   = 0;
-	unsigned long int size    = 0
+	unsigned long int size    = 0;
 	std::string hash_value 	  = "";
 	std::string last_mod_date = "";
 	std::string comments 	  = "";
+
+	template<typename Archive>
+	void serialize(Archive& ar, const unsigned int)
+	{
+		ar & lines;
+		ar & size;
+		ar & hash_value;
+		ar & last_mod_date;
+		ar & comments;
+
+	}
+
+
 };
 
 #endif //REPO_STRUCTS_H
