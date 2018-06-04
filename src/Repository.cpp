@@ -17,7 +17,7 @@ int Repository::create_repository(const char* repo_loc, const std::string& usern
 	if(boost::filesystem::create_directory(dir_path))
 	{
 
-        	generate_config_file(repo_loc, username, password);
+       	generate_config_file(repo_loc, username, password);
 
 		std::cerr<<"Repository created successfully!"<<std::endl;
 		return 0;
@@ -31,25 +31,41 @@ int Repository::create_repository(const char* repo_loc, const std::string& usern
 int Repository::generate_config_file(const char* repo_loc, const std::string& username, const std::string& password)
 {
 
-
-    std::string&& hashed_username = "";
-    std::string&& hashed_password = "";
-
-    Hash::generate_hash(username, hashed_username);
-    Hash::generate_hash(password, hashed_password);
-
     std::string config_file_path(repo_loc);
-    config_file_path += PATH_CONCAT + CONFIG_FILE_G; 
+    config_file_path += PATH_CONCAT + CONFIG_FILE_G;
 
-    std::string config_info = hashed_username END;
-    config_info += hashed_password END;
+    Hash::generate_hash(username, this->hashed_username);
+    Hash::generate_hash(password, this->hashed_password);
+    this->creation_date = boost::filesystem::last_write_time(repo_loc);
 
-    FILE_ACCESS file_write(config_file_path, config_info);
-
-    
+    serialize_bin(config_file_path, *this);
 
     return 0;
 
+}
+
+bool Repository::serialize_bin(const std::string& file_name, const Repository& repo)
+{
+    s_file.file.open(file_name, std::fstream::out | std::fstream::binary);
+    boost::archive::binary_oarchive oa(s_file.file);
+
+    oa<<repo;
+
+    s_file.file.close();
+
+    return true;
+}
+
+bool Repository::deserialize_bin(const std::string& file_name, Repository& repo)
+{
+    s_file.file.open(file_name, std::fstream::in | std::fstream::binary);
+    boost::archive::binary_iarchive ia(s_file.file);
+
+    ia>>repo;
+
+    s_file.file.close();
+
+    return true;
 }
 
 int Repository::get_config_info(const char* repo_loc, std::unordered_map<std::string, std::string>& config_info)
@@ -59,7 +75,7 @@ int Repository::get_config_info(const char* repo_loc, std::unordered_map<std::st
     config_file_path += PATH_CONCAT + CONFIG_FILE_G;
 
     std::vector<std::string>&& contents = {};
-    FILE_ACCESS file_read_vec(repo_loc, contents);
+    s_file.file_read_vec(repo_loc, contents);
 
 }
 

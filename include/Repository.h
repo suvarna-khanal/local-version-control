@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 #include <boost/filesystem.hpp>
+#include <boost/archive/binary_iarchive.hpp>
+#include <boost/archive/binary_oarchive.hpp>
 #include <unordered_map>
 
 #include "Globals.h"
@@ -15,15 +17,14 @@
 class Repository
 {
 
-	std::string hashed_password = "";
-	std::string hashed_username = "";
-	std::string creation_date 	= "";
-	unsigned int commits_count	= "";
-	std::unordered_map<std::string, FILE_PROP> files = {};
-
+	std::string hashed_password 			 = "";
+	std::string hashed_username 			 = "";
+    time_t creation_date 			         = 0;//it is long int which gives seconds elapsed since epoch(1st Jan 1970). use std::cout<<std::ctime(&creation_date)
+	unsigned int commits_count			     = 0 ;
+	std::unordered_map<std::string, FILE_PROP> files;
 
 	public:
-		
+
 	  Repository();
 	  virtual ~Repository();
 
@@ -33,6 +34,18 @@ class Repository
 	  bool validate_password(const std::string& password);
 	  int generate_config_file(const char* repo_loc, const std::string& username, const std::string& password);
 	  int get_config_info(const char* repo_loc, std::unordered_map<std::string, std::string>& config_info);
+	  inline bool serialize_bin(const std::string& file_name, const Repository& repo);
+	  inline bool deserialize_bin(const std::string& file_name, Repository& repo);
+
+	  template<typename Archive>
+      void serialize(Archive &ar, const unsigned int)
+      {
+            ar & hashed_password ;
+            ar & hashed_username ;
+            ar & creation_date 	 ;
+            ar & commits_count	 ;
+            //ar & files           ;
+      }
 
 
 
