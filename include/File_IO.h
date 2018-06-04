@@ -11,21 +11,16 @@
 
 #define END  		+"\n"
 #define APOS 		"\'"
-#define FILE_ACCESS File_IO::file_ptr->get_instance()->
 
 class File_IO
 {
 
-	std::fstream file;
-	
-
 public:
+
+    std::fstream file;
 
 	File_IO();
 	virtual ~File_IO();
-
-	static File_IO* file_ptr;
-	static File_IO* get_instance();
 
 	bool file_write(const std::string& file_name, const std::string& contents);
 	bool file_read(const std::string& file_name, std::string& contents);
@@ -36,6 +31,9 @@ public:
 
 
 };
+
+
+static File_IO s_file;
 
 
 #endif //FILE_IO_H

@@ -9,22 +9,11 @@ File_IO::File_IO()
 
 File_IO::~File_IO()
 {
+	file.close();
 	//dtor
 	
 }
 
-File_IO* File_IO::file_ptr = nullptr;
-
-File_IO* File_IO::get_instance()
-{
-
-	if(file_ptr==nullptr)
-	{
-		file_ptr = new File_IO;
-	}
-
-	return file_ptr;
-}
 
 bool File_IO::file_write(const std::string& file_name, const std::string& contents)
 {
@@ -156,6 +145,4 @@ bool File_IO::get_file_hash(const std::string& file_name, std::string& hash_valu
 	return true;
 
 }
-
-
 
