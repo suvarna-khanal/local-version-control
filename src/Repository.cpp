@@ -68,7 +68,7 @@ bool Repository::deserialize_bin(const std::string& file_name, Repository& repo)
     return true;
 }
 
-int Repository::get_config_info(const char* repo_loc, std::unordered_map<std::string, std::string>& config_info)
+int Repository::get_config_info(const char* repo_loc, std::map<std::string, std::string>& config_info)
 {
 
     std::string config_file_path(repo_loc);

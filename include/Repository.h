@@ -1,18 +1,28 @@
 #ifndef REPOSITORY_H
 #define REPOSITORY_H
-
+//#define BOOST_NO_EXCEPTIONS
+//#define BOOST_EXCEPTION_DISABLE
+//#define BOOST_NOEXCEPT_OR_NOTHROW
 
 #include <iostream>
 #include <fstream>
 #include <boost/filesystem.hpp>
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
+#include <boost/serialization/map.hpp>
+
+
+//#include <boost/throw_exception.hpp>
+//#include <boost/exception/all.hpp>
+//#include <boost/serialization/hash_map.hpp>
 #include <unordered_map>
 
 #include "Globals.h"
 #include "Hash.h"
 #include "File_IO.h"
 #include "Repo_Structs.h"
+
+
 
 class Repository
 {
@@ -21,7 +31,7 @@ class Repository
 	std::string hashed_username 			 = "";
     time_t creation_date 			         = 0;//it is long int which gives seconds elapsed since epoch(1st Jan 1970). use std::cout<<std::ctime(&creation_date)
 	unsigned int commits_count			     = 0 ;
-	std::unordered_map<std::string, FILE_PROP> files;
+	std::map<std::string, FILE_PROP> files;
 
 	public:
 
@@ -33,7 +43,7 @@ class Repository
 	  bool validate_username(const std::string& username);
 	  bool validate_password(const std::string& password);
 	  int generate_config_file(const char* repo_loc, const std::string& username, const std::string& password);
-	  int get_config_info(const char* repo_loc, std::unordered_map<std::string, std::string>& config_info);
+	  int get_config_info(const char* repo_loc, std::map<std::string, std::string>& config_info);
 	  inline bool serialize_bin(const std::string& file_name, const Repository& repo);
 	  inline bool deserialize_bin(const std::string& file_name, Repository& repo);
 
@@ -44,7 +54,7 @@ class Repository
             ar & hashed_username ;
             ar & creation_date 	 ;
             ar & commits_count	 ;
-            //ar & files           ;
+            ar & files           ;
       }
 
 
