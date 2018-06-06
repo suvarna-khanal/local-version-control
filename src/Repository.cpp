@@ -74,8 +74,11 @@ int Repository::get_config_info(const char* repo_loc, std::map<std::string, std:
     std::string config_file_path(repo_loc);
     config_file_path += PATH_CONCAT + CONFIG_FILE_G;
 
-    std::vector<std::string>&& contents = {};
-    s_file.file_read_vec(repo_loc, contents);
+    //Repository saved_repo_info;
+    //deserialize_bin()
+
+    //std::vector<std::string>&& contents = {};
+    //s_file.file_read_vec(repo_loc, contents);
 
 }
 

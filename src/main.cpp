@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 	{
 
 		std::vector<std::string> changed_files = {};
-		commit.	detect_changed_files(argv[2], changed_files);//argv[2] is the file location
+		commit.detect_changed_files(argv[2], changed_files);//argv[2] is the file location
 
 
 
