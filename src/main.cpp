@@ -25,6 +25,7 @@ int main(int argc, char* argv[])
 		bool credential_status = repository.get_credentials(username, password);
 		if(credential_status)
 		{
+            repository.print_repo_info(repository);
 			repository.create_repository(argv[2], username, password);
 
 		}

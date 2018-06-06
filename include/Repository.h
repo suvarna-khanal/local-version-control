@@ -26,13 +26,13 @@
 
 class Repository
 {
-    std::string path                         = "";
-    std::string project_name                 = "";
-    std::string repo_size                    = "";
-	std::string hashed_password 			 = "";
-	std::string hashed_username 			 = "";
-    time_t creation_date 			         = 0 ;//it is long int which gives seconds elapsed since epoch(1st Jan 1970). use std::cout<<std::ctime(&creation_date)
-	unsigned int commits_count			     = 0 ;
+    	std::string path			= "";
+    	std::string project_name		= "";
+    	std::string repo_size			= "";
+    	std::string hashed_password 		= "";
+    	std::string hashed_username 		= "";
+    	time_t creation_date 			= 0 ;//it is long int which gives seconds elapsed since epoch(1st Jan 1970). use std::cout<<std::ctime(&creation_date)
+	unsigned int commits_count		= 0 ;
 	std::map<std::string, FILE_PROP> files;
 
 	public:
@@ -50,29 +50,29 @@ class Repository
 	  inline bool deserialize_bin(const std::string& file_name, Repository& repo);
 
 	  template<typename Archive>
-      void serialize(Archive &ar, const unsigned int)
-      {
+      	  void serialize(Archive &ar, const unsigned int)
+      	  {
             ar & hashed_password ;
             ar & hashed_username ;
             ar & creation_date 	 ;
             ar & commits_count	 ;
             ar & files           ;
-      }
+      	  }
 
-      void print_repo_info(Repository& repo)
-      {
+      	void print_repo_info(Repository& repo)
+      	{
             std::cout<<"/***************Repository Information****************/"<<std::endl;
             std::cout<<"\tPath        : "<<repo.path<<std::endl;
             std::cout<<"\tProject Name: "<<repo.project_name<<std::endl;
-            std::cout<<"\tUsername    : "<<username<<std::endl;
-            std::cout<<"\tSize        : "<<repo_size<<std::endl;
+            //std::cout<<"\tUsername    : "<<repo.username<<std::endl;
+            std::cout<<"\tSize        : "<<repo.repo_size<<std::endl;
             std::cout<<"\tCreated on  : "<<std::ctime(&repo.creation_date)<<std::endl;
             std::cout<<"\tCommits     : "<<repo.commits_count<<std::endl;
             std::cout<<"\tFiles added : "<<std::endl;
-            repo.files.print();
+            //repo.files.print();
             std::cout<<"/*******************************************************/"<<std::endl;
 
-      }
+      	}
 
 
 
@@ -81,6 +81,6 @@ class Repository
 };
 
 
-static Repository saved_repo_info = nullptr;
+static Repository saved_repo_info;
 
 #endif //REPOSITORY_H
