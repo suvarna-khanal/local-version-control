@@ -8,7 +8,8 @@ struct FILE_PROP
 	unsigned long int lines   = 0;
 	unsigned long int size    = 0;
 	std::string hash_value 	  = "";
-	std::string last_mod_date = "";
+	time_t last_mod_date = "";
+	time_t added_date;
 	std::string comments 	  = "";
 
 	template<typename Archive>

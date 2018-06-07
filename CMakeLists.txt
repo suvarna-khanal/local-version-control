@@ -10,9 +10,8 @@ project (local-version-control)
 
 set(SOURCE_PATH src)
 set(HEADER_PATH include 
-				include/structs/
-				include/ext_headers/sha512/
-				boost_headers_only/boost_1_61_0/)
+		include/structs/
+		include/ext_headers/sha512/)
 
 
 set(SOURCE_FILE ${SOURCE_PATH}/main.cpp
@@ -29,6 +28,6 @@ add_executable(lovec ${SOURCE_FILE})
 include_directories(${HEADER_PATH})
 
 target_link_libraries(lovec boost_filesystem
-						    boost_system
-						    boost_serialization)
+		      boost_system
+		      boost_serialization)
 
