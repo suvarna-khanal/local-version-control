@@ -17,7 +17,7 @@ int Repository::create_repository(const char* repo_loc, const std::string& usern
 	if(boost::filesystem::create_directory(dir_path))
 	{
 
-       	generate_config_file(repo_loc, username, password);
+	       	generate_config_file(repo_loc, username, password);
 
 		std::cerr<<"Repository created successfully!"<<std::endl;
 		return 0;
@@ -175,7 +175,33 @@ bool Repository::validate_password(const std::string& password)
 
 
 
+int Repository:add(std::vector<std::string>>& files, std::string& comment)
+{
 
+	for(std::string& file: files)
+	{
+
+						
+		FILE_PROP prop;
+		
+		prop.added_date = boost::filesystem::last_write_time(file);
+		prop.lines = s_file.get_line_count(file);
+		prop.size = s_file.get_file_size(file);	
+		s_file.get_file_hash(file, prop.hash_value);
+		prop.comments = comment;
+		
+		this->files[file] = prop;
+		
+		//lovec_config.txt
+		serialize_bin("config_file.txt", *this );
+
+
+
+	}	
+
+
+
+}
 
 
 

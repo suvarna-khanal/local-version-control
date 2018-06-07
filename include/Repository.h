@@ -10,11 +10,6 @@
 #include <boost/archive/binary_iarchive.hpp>
 #include <boost/archive/binary_oarchive.hpp>
 #include <boost/serialization/map.hpp>
-
-
-//#include <boost/throw_exception.hpp>
-//#include <boost/exception/all.hpp>
-//#include <boost/serialization/hash_map.hpp>
 #include <unordered_map>
 
 #include "Globals.h"
@@ -26,12 +21,10 @@
 
 class Repository
 {
-    	std::string path			= "";
     	std::string project_name		= "";
-    	std::string repo_size			= "";
     	std::string hashed_password 		= "";
     	std::string hashed_username 		= "";
-    	time_t creation_date 			= 0 ;//it is long int which gives seconds elapsed since epoch(1st Jan 1970). use std::cout<<std::ctime(&creation_date)
+    	time_t creation_date 			= 0 ;//cout<<std::ctime(&creation_date)
 	unsigned int commits_count		= 0 ;
 	std::map<std::string, FILE_PROP> files;
 
@@ -49,6 +42,8 @@ class Repository
 	  inline bool serialize_bin(const std::string& file_name, const Repository& repo);
 	  inline bool deserialize_bin(const std::string& file_name, Repository& repo);
 
+	  int add(std::vector<std::string>>& files); 
+
 	  template<typename Archive>
       	  void serialize(Archive &ar, const unsigned int)
       	  {
@@ -62,13 +57,11 @@ class Repository
       	void print_repo_info(Repository& repo)
       	{
             std::cout<<"/***************Repository Information****************/"<<std::endl;
-            std::cout<<"\tPath        : "<<repo.path<<std::endl;
-            std::cout<<"\tProject Name: "<<repo.project_name<<std::endl;
-            //std::cout<<"\tUsername    : "<<repo.username<<std::endl;
-            std::cout<<"\tSize        : "<<repo.repo_size<<std::endl;
-            std::cout<<"\tCreated on  : "<<std::ctime(&repo.creation_date)<<std::endl;
-            std::cout<<"\tCommits     : "<<repo.commits_count<<std::endl;
-            std::cout<<"\tFiles added : "<<std::endl;
+            std::cout<<"\tProject Name  : "<<repo.project_name<<std::endl;
+            std::cout<<"\tAuthorized to : "<<repo.username<<std::endl;
+            std::cout<<"\tCreated on    : "<<std::ctime(&repo.creation_date)<<std::endl;
+            std::cout<<"\tCommits       : "<<repo.commits_count<<std::endl;
+            std::cout<<"\tFiles added   : "<<std::endl;
             //repo.files.print();
             std::cout<<"/*******************************************************/"<<std::endl;
 
