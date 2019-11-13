@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <content>
-    <fw_version>p12012</fw_version>
-    <mcu_version>2001</mcu_version>
-    <firmware>http://s3.amazonaws.com/googlecertification/Canton/SmartAmp5.1/83_IMAGE_network_SmartAMP_12012_2001</firmware>
-    <otapackage>https://s3.amazonaws.com/googlecertification/Canton/SmartAmp5.1/cast_audio_reference_1.36a_audiodefault-user_145856_cast_receiver_signed.zip</otapackage>
-    <crc32check>d0094863</crc32check>
+    <fw_version>p12020</fw_version>
+    <mcu_version>1.93</mcu_version>
+    <firmware>http://s3.amazonaws.com/googlecertification/Primare/I15/83_IMAGE_network_I15_12020_193</firmware>
+    <otapackage>http://s3.amazonaws.com/googlecertification/Primare/PRE35/cast_audio_reference_1.36a_audiodefault-user_145856_cast_receiver_signed.zip</otapackage>
+    <crc32check>95f6149e</crc32check>
     <ForceUpgrade>true</ForceUpgrade>
-	<MAC>d8:f7:10:c6:37:de,D8:F7:10:C6:36:F4,d8:f7:10:c0:3b:e8,D8:F7:10:C6:37:E4</MAC>
+	<MAC>d8:f7:10:c2:aa:32</MAC>
 </content>
