@@ -6,5 +6,5 @@
     <otapackage>http://s3.amazonaws.com/googlecertification/Primare/PRE35/cast_audio_reference_1.36a_audiodefault-user_145856_cast_receiver_signed.zip</otapackage>
     <crc32check>95f6149e</crc32check>
     <ForceUpgrade>true</ForceUpgrade>
-    <MAC>cc:90:93:10:15:ec,cc:90:93:10:16:0e,D8:F7:10:C4:FC:FA</MAC>
+    <MAC>d8:f7:10:c2:aa:32</MAC>
 </content>
